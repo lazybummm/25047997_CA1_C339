@@ -3,8 +3,22 @@ name: Digital Wallet Unit Tests
 
 on:
   push:
+    branches:
+      - main
+    paths:
+      - '06_digital_wallet/**/*.py'
+      - '.github/workflows/pytest.yml'
+
   pull_request:
+    paths:
+      - '06_digital_wallet/**/*.py'
+      - '.github/workflows/pytest.yml'
+
   workflow_dispatch:
+
+concurrency:
+  group: digital-wallet-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
 
 jobs:
   test:
