@@ -4,7 +4,7 @@ def withdraw(balance_cents, amount_cents):
         raise TypeError("invalid argument type")
 
     if balance_cents < 0 or amount_cents <= 0:
-        raise ValueError("argument outside permitted range")
+        raise ValueError("argument outside permitted ")
 
     if amount_cents >= balance_cents:
         raise ValueError("insufficient balance")
